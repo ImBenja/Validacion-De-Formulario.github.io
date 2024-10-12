@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /*COLORES*/
+
+  /*PRIMARIOS*/
+
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+
+  /*ACCENT*/
+
+  --Blue: hsl(248, 32%, 49%);
+
+  /*NEUTRALES*/
+
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+body {
+  width: 100%;
+  background: url(../img/bg-intro-mobile.png), var(--Red);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.enviado {
+  display: none;
+  top: 0;
+  position: fixed;
+  padding: 20px;
+  width: 100%;
+  margin: 20px auto 0px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: green;
+}
+.enviado .text-enviado {
+  color: white;
+  font-weight: bold;
+}
+
+.container {
+  padding: 2rem;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.container .text .title {
+  font-size: 2rem;
+  color: white;
+  line-height: 44px;
+}
+.container .text .parrafo {
+  margin: 1rem auto;
+  color: white;
+  opacity: 80%;
+  width: 90%;
+}
+
+.container .precio {
+  background-color: var(--Blue);
+  border-radius: 10px;
+  box-shadow: 0px 7px 1px 0px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem;
+  margin-top: 3rem;
+}
+.container .precio .text-precio {
+  color: white;
+  line-height: 30px;
+  opacity: 80%;
+  width: 70%;
+  margin: 0 auto;
+}
+.container .precio .text-precio span {
+  font-weight: 700;
+}
+
+.container .formulario {
+  margin-top: 1.3rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 1.1rem 1.7rem;
+  border-radius: 10px;
+  box-shadow: 0px 7px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.container .formulario .input-contai {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container .formulario .input-contai .inputs {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1.2rem;
+  border: 1px solid var(--Grayish-Blue);
+  border-radius: 5px;
+  outline: none;
+  color: black;
+  font-weight: bold;
+}
+.container .formulario .input-contai .inputs::placeholder {
+  font-weight: 700;
+}
+.container .formulario .input-contai .inputs.error::placeholder {
+  color: var(--Red);
+  opacity: 90%;
+}
+.container .formulario .input-contai .inputs.error {
+  border: 2px solid red;
+}
+
+.container .formulario .text-error {
+  font-size: 0.8rem;
+  color: var(--Red);
+  text-align: right;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-style: italic;
+  display: none;
+}
+.container .formulario .icon-error {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 12px;
+  top: 36px;
+  display: none;
+}
+.container .formulario .icon-error.active,
+.container .formulario .text-error.active {
+  display: block;
+}
+
+.container .formulario .btn {
+  border: none;
+  background-color: var(--Green);
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-align: center;
+  box-shadow: 0px 3px 1px 0px rgb(74, 224, 74);
+  cursor: pointer;
+}
+.container .formulario .btn:hover {
+  background-color: lightgreen;
+}
+.container .formulario .footer-text {
+  color: var(--Grayish-Blue);
+  font-size: 14px;
+  margin-top: 1rem;
+}
+.container .formulario .footer-text a {
+  color: var(--Red);
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background: url(../img/bg-intro-desktop.png), var(--Red);
+    background-size: cover;
+    max-width: 1200px;
+  }
+
+  .enviado {
+    width: 50%;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container .text {
+    text-align: left;
+    grid-row: 2;
+    width: 90%;
+    margin-top: 6rem;
+  }
+  .container .text .title {
+    font-size: 3rem;
+    line-height: 60px;
+  }
+  .container .text .parrafo {
+    width: 100%;
+  }
+
+  .container .precio {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .container .precio .text-precio {
+    width: 100%;
+  }
+
+  .container .formulario {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 1.5rem 1.7rem 2.1rem;
+  }
+
+  .container .formulario .footer-text {
+    font-size: 12px;
+  }
+}
